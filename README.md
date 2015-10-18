@@ -1,33 +1,39 @@
 Digest::xxHash
-=============
+==============
 
-"xxHash is an extremely fast non-cryptographic Hash algorithm, working at speeds close to RAM limits."
+Perl 6 bindings for xxHash.
 
-This module provides perl6 bindings for the xxHash (https://code.google.com/p/xxhash/).
-xxHash's source code is bundled along so make/cmake/ on *NIX are required!
 
-## Dependencies.
+Usage
+-----
 
-run time: NativeCall (p6 module)
+```perl6
+# 32 or 64 bit xxHash from string, depending on architecture
+say xxHash("dupa");
 
-compile time: make (on *NIX), c compiler and friends, cmake (http://www.cmake.org/)
+# 32 bit
+say xxHash32("dupa");
 
-## Exported subroutines.
+# 64 bit
+say xxHash64("dupa");
 
-### xxhash_revision()
-Takes no arguments and returns revision (in form of an Int) of the upstream xxHash svn repository of the currently used xxHash sources in the Digest::xxHash.
+# 32 or 64 bit xxHash from file
+say xxHash(:file<filename.txt>);
 
-### xxhash_src_uri()
-Takes no arguments and returns uri (Str) to the upstream svn repository from which xxHash c sources were exported.
+# 32 or 64 bit xxHash from Buf
+say xxHash(buf-u8 => Buf[uint8].new(0x64, 0x75, 0x70, 0x61))
+```
 
-### xxHash(...)
-actual signatures:
 
-    multi sub xxHash(Str $string, Int :$seed = 0)
-    multi sub xxHash(Str :$file!, Int :$seed = 0)
-    multi sub xxHash(Buf[uint8] :$buf-u8!, Int :$seed = 0)
+Dependencies
+------------
 
-All of the above return an Int representing hash of the given data.
+- Rakudo Perl 6
+- [libxxhash](https://aur.archlinux.org/packages/libxxhash) r42
 
-## Installing on windows.
 
+Licensing
+---------
+
+This is free and unencumbered public domain software. For more
+information, see http://unlicense.org/ or the accompanying UNLICENSE file.
