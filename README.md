@@ -1,7 +1,8 @@
 Digest::xxHash
 ==============
 
-Perl 6 bindings for xxHash.
+Perl 6 bindings for xxHash. 32 bit functions recommended pending unsigned
+long long support in NativeCall.
 
 
 Usage
