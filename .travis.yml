@@ -20,3 +20,4 @@ before_install:
   - make all
   - popd
   - sudo make install -C build/
+  - cd $TRAVIS_BUILD_DIR
