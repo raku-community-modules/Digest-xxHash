@@ -30,7 +30,7 @@ Dependencies
 ------------
 
 - Rakudo Perl6
-- [libxxhash](https://aur.archlinux.org/packages/libxxhash) r42
+- [libxxhash](https://aur.archlinux.org/packages/libxxhash)
 
 
 Licensing
