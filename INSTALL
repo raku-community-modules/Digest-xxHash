@@ -1,0 +1,69 @@
+Manual install on a Debian based system. (Other distributions will be
+similar but may use different package managers.)
+
+See if the libxxhash library is installed on your system. (probably not)
+
+run:
+locate libxxhash
+
+Look for
+libxxhash.so
+libxxhash.so.0
+libxxhash.0.42.0
+under /usr/lib or /usr/local/lib.
+
+If it isn't installed, download source zip or tarball from:
+
+https://github.com/Cyan4973/xxHash/releases
+
+(latest is xxHash v0.6.2 as of this writing)
+
+Extract tarball to a temp directory.
+
+cd {temp-directory}/xxHash-0.6.2/cmake_unofficial
+
+In the /cmake_unofficial folder run:
+
+cmake CMakeLists.txt
+
+( if cmake is not found, install cmake and re-run )
+sudo apt-get install cmake
+( depending on distribution, may need build-essential )
+sudo apt-get install build-essential
+
+Once cmake CMakeLists.txt completes, run;
+
+make
+make test
+make install
+
+( May need to: sudo make install )
+
+At this point libxxhash.so should be installed in
+/usr/local/lib/
+
+To verify run:
+sudo updatedb
+locate libxxhash
+
+Perl 6 does not look in /usr/local/lib by default. You
+will likely need to:
+
+a)  copy or move the files to the /usr/lib folder (probably a bad idea)
+
+b)  place symbolic links in the /usr/lib folder (less bad, but not recommended)
+
+or c)  export the library path to include /usr/local/lib (best option)
+
+(Assuming you are using a bash terminal), at a terminal prompt enter:
+
+export LD_LIBRARY_PATH="/usr/local/lib"
+
+or to automatically load it in every new terminal window, add the line:
+
+export LD_LIBRARY_PATH="/usr/local/lib";
+
+to your .bashrc file in your home directory.
+
+Finally,
+zef install Digest::xxHash
