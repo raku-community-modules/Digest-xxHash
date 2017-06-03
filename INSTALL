@@ -1,0 +1,50 @@
+Manual install on a Debian based system. (Other distributions will be
+similar but may use different package managers.)
+
+See if the libxxhash library is installed on your system. (probably not)
+
+run:
+locate libxxhash
+
+Look for
+libxxhash.so
+libxxhash.so.0
+libxxhash.0.42.0
+under /usr/lib.
+
+If it isn't installed, download source zip or tarball from:
+
+https://github.com/Cyan4973/xxHash/releases
+
+(latest is xxHash v0.6.2 as of this writing)
+
+Extract tarball to a temp directory.
+
+cd {temp-directory}/xxHash-0.6.2/cmake_unofficial
+
+run:
+
+cmake -DCMAKE_INSTALL_PREFIX=/usr {path-to}/{temp-directory}/cmake_unofficial/
+
+( if cmake is not found, install cmake and re-run )
+sudo apt-get install cmake
+( depending on distribution, may need build-essential )
+sudo apt-get install build-essential
+
+Once cmake CMakeLists.txt completes, run;
+
+make
+make test
+make install
+
+( May need to: sudo make install )
+
+At this point libxxhash.so should be installed in
+/usr/lib/
+
+To verify run:
+sudo updatedb
+locate libxxhash
+
+Finally,
+zef install Digest::xxHash
