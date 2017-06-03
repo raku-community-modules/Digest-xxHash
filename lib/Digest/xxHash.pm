@@ -22,10 +22,15 @@ multi sub xxHash(Str $string, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash(Str :$file!, Int :$seed = 0 --> Int) is export
 {
-    xxHash(slurp($file), :$seed);
+    xxHash( $file.IO.slurp( :bin ), :$seed);
 }
 
-multi sub xxHash(Buf[uint8] :$buf-u8!, Int :$seed = 0 --> Int) is export
+multi sub xxHash(IO $fh, Int :$seed = 0 --> Int) is export
+{
+    xxHash( $fh.slurp( :bin ), :$seed);
+}
+
+multi sub xxHash(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
     my Int @data = $buf-u8.list;
     build-xxhash(@data, $seed);
@@ -49,10 +54,15 @@ multi sub xxHash32(Str $string, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash32(Str :$file!, Int :$seed = 0 --> Int) is export
 {
-    xxHash32(slurp($file), :$seed);
+    xxHash32($file.IO.slurp( :bin ), :$seed);
 }
 
-multi sub xxHash32(Buf[uint8] :$buf-u8!, Int :$seed = 0 --> Int) is export
+multi sub xxHash32(IO $fh, Int :$seed = 0 --> Int) is export
+{
+    xxHash32($fh.slurp( :bin ), :$seed);
+}
+
+multi sub xxHash32(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
     my Int @data = $buf-u8.list;
     build-xxhash32(@data, $seed);
@@ -77,10 +87,15 @@ multi sub xxHash64(Str $string, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash64(Str :$file!, Int :$seed = 0 --> Int) is export
 {
-    xxHash64(slurp($file), :$seed);
+    xxHash64($file.IO.slurp( :bin ), :$seed);
 }
 
-multi sub xxHash64(Buf[uint8] :$buf-u8!, Int :$seed = 0 --> Int) is export
+multi sub xxHash64(IO $fh, Int :$seed = 0 --> Int) is export
+{
+    xxHash64($fh.slurp( :bin ), :$seed);
+}
+
+multi sub xxHash64(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
     my Int @data = $buf-u8.list;
     build-xxhash64(@data, $seed);
