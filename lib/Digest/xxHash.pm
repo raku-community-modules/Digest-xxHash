@@ -16,7 +16,7 @@ sub XXH64(CArray[int8], size_t, ulonglong --> ulonglong) is native('xxhash', v0.
 
 multi sub xxHash(Str $string, Str :$enc = 'UTF-8', Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $string.encode($enc).list;
+    my Int @data = $string.encode($enc).list();
     build-xxhash(@data, $seed);
 }
 
@@ -32,7 +32,7 @@ multi sub xxHash(IO $fh, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $buf-u8.list;
+    my Int @data = $buf-u8.list();
     build-xxhash(@data, $seed);
 }
 
@@ -48,7 +48,7 @@ sub build-xxhash(Int @data, Int $seed = 0 --> Int)
 
 multi sub xxHash32(Str $string, Str :$enc = 'UTF-8', Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $string.encode($enc).list;
+    my Int @data = $string.encode($enc).list();
     build-xxhash32(@data, $seed);
 }
 
@@ -64,13 +64,13 @@ multi sub xxHash32(IO $fh, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash32(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $buf-u8.list;
+    my Int @data = $buf-u8.list();
     build-xxhash32(@data, $seed);
 }
 
 sub build-xxhash32(Int @data, uint $seed = 0 --> uint)
 {
-    my @input := CArray[int8].new;
+    my @input := CArray[int8].new();
     my Int $len = 0;
     @input[$len++] = $_ for @data;
     XXH32(@input, $len, $seed);
@@ -81,7 +81,7 @@ sub build-xxhash32(Int @data, uint $seed = 0 --> uint)
 
 multi sub xxHash64(Str $string, Str :$enc = 'UTF-8', Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $string.encode($enc).list;
+    my Int @data = $string.encode($enc).list();
     build-xxhash64(@data, $seed);
 }
 
@@ -97,13 +97,13 @@ multi sub xxHash64(IO $fh, Int :$seed = 0 --> Int) is export
 
 multi sub xxHash64(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) is export
 {
-    my Int @data = $buf-u8.list;
+    my Int @data = $buf-u8.list();
     build-xxhash64(@data, $seed);
 }
 
 sub build-xxhash64(Int @data, ulonglong $seed = 0 --> ulonglong)
 {
-    my @input := CArray[int8].new;
+    my @input := CArray[int8].new();
     my Int $len = 0;
     @input[$len++] = $_ for @data;
     XXH64(@input, $len, $seed);
