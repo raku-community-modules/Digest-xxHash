@@ -15,4 +15,4 @@ env:
 install:
     - cd $TRAVIS_BUILD_DIR
     - rakudobrew build zef
-    - zef build .
+    - zef --deps-only --/test install .
