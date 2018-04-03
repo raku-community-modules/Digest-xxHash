@@ -2,8 +2,6 @@ use v6;
 use NativeCall;
 unit module Digest::xxHash;
 
-constant XXHASH = %?RESOURCES<libraries/xxhash>.Str;
-
 # xxHash C wrapper functions (/usr/lib/libxxhash.so) {{{
 
 # unsigned int XXH32 (const void* input, size_t length, unsigned seed);
@@ -12,7 +10,7 @@ sub XXH32(
     size_t,
     uint32
     --> uint32
-) is native(XXHASH, v0.6.4)
+) is native('xxhash', v0.6.4)
 {*}
 
 # unsigned long long XXH64 (const void* input, size_t length, unsigned long long seed);
@@ -21,7 +19,7 @@ sub XXH64(
     size_t,
     ulonglong
     --> ulonglong
-) is native(XXHASH, v0.6.4)
+) is native('xxhash', v0.6.4)
 {*}
 
 # end xxHash C wrapper functions (/usr/lib/libxxhash.so) }}}

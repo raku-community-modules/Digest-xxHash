@@ -1,7 +1,7 @@
 {
     "perl"        : "6.*",
     "name"        : "Digest::xxHash",
-    "version"     : "1.1.0",
+    "version"     : "1.0.1",
     "authors"     : [
         "Bartłomiej Palmowski",
         "atweiden",
@@ -17,8 +17,5 @@
     },
     "provides"    : {
         "Digest::xxHash" : "lib/Digest/xxHash.pm6"
-    },
-    "resources"   : [
-        "libraries/xxhash"
-    ]
+    }
 }

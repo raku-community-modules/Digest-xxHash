@@ -1,5 +1,4 @@
 syntax: glob
 
 .precomp
-resources
 .subgit
