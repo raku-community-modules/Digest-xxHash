@@ -36,6 +36,18 @@ say xxHash64("dupa");
 - Rakudo Perl6
 - [libxxhash][libxxhash] ([mac][mac], [pac][pac])
 
+In Ubuntu or other distros, you need to
+download [libxxhash][libxxhash], compile and install it 
+
+     make
+     sudo make install
+     
+and then
+
+    sudo ln -s /usr/local/lib/libxxhash.* /usr/lib
+
+so that this one finds it. Adding `/usr/local/lib` to the NativeCall
+path might work, too.
 
 ## Licensing
 
