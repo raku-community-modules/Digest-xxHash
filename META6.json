@@ -7,7 +7,7 @@
         "atweiden",
         "Steve Schulze (thundergnat)"
     ],
-    "description" : "xxHash bindings for Perl6",
+    "description" : "xxHash bindings for Perl 6",
     "license"     : "Unlicense",
     "source-type" : "git",
     "source-url"  : "git://github.com/atweiden/digest-xxhash.git",

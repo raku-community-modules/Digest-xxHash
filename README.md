@@ -1,6 +1,6 @@
 # Digest::xxHash
 
-Perl6 bindings for xxHash.
+Perl 6 bindings for xxHash.
 
 
 ## Usage
@@ -33,8 +33,8 @@ say xxHash64("dupa");
 
 ## Dependencies
 
-- Rakudo Perl6
-- [libxxhash][libxxhash] ([mac][mac], [pac][pac])
+- Rakudo Perl 6
+- [libxxhash][libxxhash] ([mac][mac], [pac][pac], [void][void])
 
 
 ## Licensing
@@ -44,4 +44,5 @@ information, see http://unlicense.org/ or the accompanying UNLICENSE file.
 
 [libxxhash]: https://github.com/Cyan4973/xxHash
 [mac]: http://formulae.brew.sh/formula/xxhash
-[pac]: https://aur.archlinux.org/packages/libxxhash/
+[pac]: https://www.archlinux.org/packages/community/x86_64/xxhash/
+[void]: https://github.com/void-linux/void-packages/blob/master/srcpkgs/xxHash/template
