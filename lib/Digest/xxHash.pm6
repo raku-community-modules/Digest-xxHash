@@ -151,4 +151,4 @@ sub build-xxhash64(Int @data, ulonglong $seed = 0 --> ulonglong)
 
 # end 64 bit only }}}
 
-# vim: set filetype=perl6 foldmethod=marker foldlevel=0:
+# vim: set filetype=raku foldmethod=marker foldlevel=0:

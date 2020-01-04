@@ -1,6 +1,6 @@
 # Digest::xxHash
 
-Perl 6 bindings for xxHash.
+Raku bindings for xxHash.
 
 
 ## Usage
@@ -33,7 +33,7 @@ say xxHash64("dupa");
 
 ## Dependencies
 
-- Rakudo Perl 6
+- Raku
 - [libxxhash][libxxhash] ([mac][mac], [pac][pac], [void][void])
 
 
