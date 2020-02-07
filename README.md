@@ -5,7 +5,7 @@ Raku bindings for xxHash.
 
 ## Usage
 
-```perl6
+```raku
 # 32 or 64 bit xxHash from string, automatically select 64 bit if available else
 # fall back to 32 bit depending on architecture.
 
