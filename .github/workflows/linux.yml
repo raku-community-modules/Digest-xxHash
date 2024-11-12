@@ -24,7 +24,7 @@ jobs:
           raku-version: ${{ matrix.raku-version }}
       - name: Update apt-get
         run: sudo apt-get update -qq
-      - name: Install GD
-        run: sudo apt-get install -y libxxhash
+      - name: Install xxhash
+        run: sudo apt-get install -y xxhash
       - name: Run Special Tests
         run: raku run-tests -i
