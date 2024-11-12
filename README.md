@@ -1,14 +1,14 @@
-# Digest::xxHash
+[![Actions Status](https://github.com/raku-community-modules/Digest-xxHash/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Digest-xxHash/actions)
 
-Raku bindings for xxHash.
+NAME
+====
 
+Digest::xxHash - xxHash bindings for Raku
 
-## Usage
+SYNOPSIS
+========
 
 ```raku
-# 32 or 64 bit xxHash from string, automatically select 64 bit if available else
-# fall back to 32 bit depending on architecture.
-
 # 32 or 64 bit xxHash from a string
 say xxHash("dupa");
 
@@ -31,18 +31,34 @@ say xxHash32("dupa");
 say xxHash64("dupa");
 ```
 
-## Dependencies
+DESCRIPTION
+===========
 
-- Raku
-- [libxxhash][libxxhash] ([mac][mac], [pac][pac], [void][void])
+The Digest::xxHash distribution exports three subroutines: `xxHash`, `xxHash32` and `xxHash64`.
 
+The `xxHash` subroutine returns a 64 bit xxHash from a string (32 bit if no native 64 bit logic is available).
 
-## Licensing
+The `xxHash32` and `xxHash64` subroutines return a 32 bit / 64 bit xxHash respectively (64 bit only if supported by architecture).
 
-This is free and unencumbered public domain software. For more
-information, see http://unlicense.org/ or the accompanying UNLICENSE file.
+Depends on the [libxxhash](https://github.com/Cyan4973/xxHash) native library.
 
-[libxxhash]: https://github.com/Cyan4973/xxHash
-[mac]: http://formulae.brew.sh/formula/xxhash
-[pac]: https://www.archlinux.org/packages/community/x86_64/xxhash/
-[void]: https://github.com/void-linux/void-packages/blob/master/srcpkgs/xxHash/template
+AUTHORS
+=======
+
+  * Bartłomiej Palmowski
+
+  * Andy Weidenbaum
+
+  * Steve Schulze
+
+COPYRIGHT AND LICENSE
+=====================
+
+Copyright 2013 - 2014 Bartłomiej Palmowski
+
+Copyright 2013 - 2023 Andy Weidenbaum
+
+Copyright 2024 Raku Community
+
+This is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying UNLICENSE file.
+

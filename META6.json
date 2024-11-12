@@ -1,21 +1,30 @@
 {
-    "perl"        : "6.*",
-    "name"        : "Digest::xxHash",
-    "version"     : "1.8.0",
-    "authors"     : [
-        "Bartłomiej Palmowski",
-        "atweiden",
-        "Steve Schulze (thundergnat)"
-    ],
-    "description" : "xxHash bindings for Raku",
-    "license"     : "Unlicense",
-    "source-type" : "git",
-    "source-url"  : "git://github.com/atweiden/digest-xxhash.git",
-    "support"     : {
-        "bugtracker" : "https://github.com/atweiden/digest-xxhash/issues",
-        "source"     : "https://github.com/atweiden/digest-xxhash"
-    },
-    "provides"    : {
-        "Digest::xxHash" : "lib/Digest/xxHash.pm6"
-    }
+  "auth": "zef:raku-community-modules",
+  "authors": [
+    "Bartłomiej Palmowski",
+    "atweiden",
+    "Steve Schulze (thundergnat)"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+  ],
+  "description": "xxHash bindings for Raku",
+  "license": "Unlicense",
+  "name": "Digest::xxHash",
+  "perl": "6.*",
+  "provides": {
+    "Digest::xxHash": "lib/Digest/xxHash.rakumod"
+  },
+  "resources": [
+  ],
+  "source-type": "git",
+  "source-url": "https://github.com/raku-community-modules/Digest-xxHash.git",
+  "tags": [
+    "DIGEST",
+    "XXHASH"
+  ],
+  "test-depends": [
+  ],
+  "version": "1.8.0"
 }
