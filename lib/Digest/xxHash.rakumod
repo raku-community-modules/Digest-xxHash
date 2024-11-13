@@ -17,8 +17,8 @@ sub XXH32(
 sub XXH64(
     CArray[int8],
     size_t,
-    uint64
-    --> uint64
+    int64
+    --> int64
 ) is native('xxhash', v0.8.2)
 {*}
 
@@ -130,7 +130,7 @@ multi sub xxHash64(Buf[uint8] $buf-u8, Int :$seed = 0 --> Int) {
     build-xxhash64(@data, $seed);
 }
 
-sub build-xxhash64(Int @data, uint64 $seed = 0 --> uint64)
+sub build-xxhash64(Int @data, int64 $seed = 0 --> int64)
 {
     my @input := CArray[int8].new;
     my int $len;
