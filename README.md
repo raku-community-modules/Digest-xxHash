@@ -1,4 +1,4 @@
-[![Actions Status](https://github.com/raku-community-modules/Digest-xxHash/actions/workflows/test.yml/badge.svg)](https://github.com/raku-community-modules/Digest-xxHash/actions)
+[![Actions Status](https://github.com/raku-community-modules/Digest-xxHash/actions/workflows/linux.yml/badge.svg)](https://github.com/raku-community-modules/Digest-xxHash/actions) [![Actions Status](https://github.com/raku-community-modules/Digest-xxHash/actions/workflows/macos.yml/badge.svg)](https://github.com/raku-community-modules/Digest-xxHash/actions)
 
 NAME
 ====
