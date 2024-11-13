@@ -10,7 +10,7 @@ sub XXH32(
     size_t,
     uint32
     --> uint32
-) is native('xxhash', v0.8.2)
+) is native('xxhash')
 {*}
 
 # unsigned long long XXH64 (const void* input, size_t length, unsigned long long seed);
@@ -19,7 +19,7 @@ sub XXH64(
     size_t,
     int64
     --> int64
-) is native('xxhash', v0.8.2)
+) is native('xxhash')
 {*}
 
 # end xxHash C wrapper functions (/usr/lib/libxxhash.so) }}}
