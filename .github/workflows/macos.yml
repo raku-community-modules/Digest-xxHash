@@ -25,6 +25,6 @@ jobs:
       - name: Install xxhash
         run: brew install xxHash
       - name: Make xxhash reachable
-        run: raku -e 'symlink "/opt/homebrew/lib/libxxhash.0.8.2.dylib".IO, $*EXECUTABLE.parent.sibling("lib/libxxhash.0.8.2.dylib")'
+        run: raku -e 'symlink "/opt/homebrew/lib/libxxhash.dylib".IO, $*EXECUTABLE.parent.sibling("lib/libxxhash.dylib")'
       - name: Run Special Tests
         run: raku run-tests -i
